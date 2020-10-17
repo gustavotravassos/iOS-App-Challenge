@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		270D873B253B4112008352B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D873A253B4112008352B2 /* AppDelegate.swift */; };
 		270D873D253B4112008352B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D873C253B4112008352B2 /* SceneDelegate.swift */; };
-		270D873F253B4112008352B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D873E253B4112008352B2 /* ViewController.swift */; };
-		270D8742253B4112008352B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270D8740253B4112008352B2 /* Main.storyboard */; };
 		270D8744253B4114008352B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270D8743253B4114008352B2 /* Assets.xcassets */; };
 		270D8747253B4114008352B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270D8745253B4114008352B2 /* LaunchScreen.storyboard */; };
 		270D8752253B4115008352B2 /* iOS_App_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D8751253B4115008352B2 /* iOS_App_ChallengeTests.swift */; };
@@ -44,8 +42,6 @@
 		270D8737253B4112008352B2 /* iOS-App-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-App-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		270D873A253B4112008352B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		270D873C253B4112008352B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		270D873E253B4112008352B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		270D8741253B4112008352B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		270D8743253B4114008352B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270D8746253B4114008352B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270D8748253B4114008352B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,8 +110,6 @@
 				2746720F253B481700AF5BEC /* Application Base */,
 				27467210253B481E00AF5BEC /* Networking */,
 				27467211253B482400AF5BEC /* Screens */,
-				270D873E253B4112008352B2 /* ViewController.swift */,
-				270D8740253B4112008352B2 /* Main.storyboard */,
 				270D8745253B4114008352B2 /* LaunchScreen.storyboard */,
 			);
 			path = "iOS-App-Challenge";
@@ -301,7 +295,6 @@
 				270D8747253B4114008352B2 /* LaunchScreen.storyboard in Resources */,
 				270D8744253B4114008352B2 /* Assets.xcassets in Resources */,
 				2746721B253B487600AF5BEC /* List.storyboard in Resources */,
-				270D8742253B4112008352B2 /* Main.storyboard in Resources */,
 				27467216253B487100AF5BEC /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270D873F253B4112008352B2 /* ViewController.swift in Sources */,
 				270D873B253B4112008352B2 /* AppDelegate.swift in Sources */,
 				27467225253B48B000AF5BEC /* SearchViewController.swift in Sources */,
 				2746722A253B48B800AF5BEC /* ListViewController.swift in Sources */,
@@ -368,14 +360,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		270D8740253B4112008352B2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				270D8741253B4112008352B2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		270D8745253B4114008352B2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -510,7 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDMT4NZ5FG;
-				INFOPLIST_FILE = "iOS-App-Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-App-Challenge/Application Base/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDMT4NZ5FG;
-				INFOPLIST_FILE = "iOS-App-Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-App-Challenge/Application Base/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
