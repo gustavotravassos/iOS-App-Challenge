@@ -15,6 +15,12 @@
 		270D8747253B4114008352B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270D8745253B4114008352B2 /* LaunchScreen.storyboard */; };
 		270D8752253B4115008352B2 /* iOS_App_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D8751253B4115008352B2 /* iOS_App_ChallengeTests.swift */; };
 		270D875D253B4115008352B2 /* iOS_App_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D875C253B4115008352B2 /* iOS_App_ChallengeUITests.swift */; };
+		27467216253B487100AF5BEC /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27467215253B487100AF5BEC /* Details.storyboard */; };
+		2746721B253B487600AF5BEC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2746721A253B487600AF5BEC /* List.storyboard */; };
+		27467220253B487E00AF5BEC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2746721F253B487E00AF5BEC /* Search.storyboard */; };
+		27467225253B48B000AF5BEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27467224253B48B000AF5BEC /* SearchViewController.swift */; };
+		2746722A253B48B800AF5BEC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27467229253B48B800AF5BEC /* ListViewController.swift */; };
+		2746723A253B48D000AF5BEC /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27467239253B48D000AF5BEC /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		270D8758253B4115008352B2 /* iOS-App-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-App-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		270D875C253B4115008352B2 /* iOS_App_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_App_ChallengeUITests.swift; sourceTree = "<group>"; };
 		270D875E253B4115008352B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27467215253B487100AF5BEC /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		2746721A253B487600AF5BEC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		2746721F253B487E00AF5BEC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		27467224253B48B000AF5BEC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		27467229253B48B800AF5BEC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		27467239253B48D000AF5BEC /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,12 @@
 		270D8739253B4112008352B2 /* iOS-App-Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				270D873A253B4112008352B2 /* AppDelegate.swift */,
-				270D873C253B4112008352B2 /* SceneDelegate.swift */,
+				2746720F253B481700AF5BEC /* Application Base */,
+				27467210253B481E00AF5BEC /* Networking */,
+				27467211253B482400AF5BEC /* Screens */,
 				270D873E253B4112008352B2 /* ViewController.swift */,
 				270D8740253B4112008352B2 /* Main.storyboard */,
-				270D8743253B4114008352B2 /* Assets.xcassets */,
 				270D8745253B4114008352B2 /* LaunchScreen.storyboard */,
-				270D8748253B4114008352B2 /* Info.plist */,
 			);
 			path = "iOS-App-Challenge";
 			sourceTree = "<group>";
@@ -126,6 +137,61 @@
 				270D875E253B4115008352B2 /* Info.plist */,
 			);
 			path = "iOS-App-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		2746720F253B481700AF5BEC /* Application Base */ = {
+			isa = PBXGroup;
+			children = (
+				270D873A253B4112008352B2 /* AppDelegate.swift */,
+				270D873C253B4112008352B2 /* SceneDelegate.swift */,
+				270D8743253B4114008352B2 /* Assets.xcassets */,
+				270D8748253B4114008352B2 /* Info.plist */,
+			);
+			path = "Application Base";
+			sourceTree = "<group>";
+		};
+		27467210253B481E00AF5BEC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		27467211253B482400AF5BEC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				27467212253B483200AF5BEC /* Details */,
+				27467213253B483800AF5BEC /* List */,
+				27467214253B483C00AF5BEC /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		27467212253B483200AF5BEC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				27467215253B487100AF5BEC /* Details.storyboard */,
+				27467239253B48D000AF5BEC /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		27467213253B483800AF5BEC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2746721A253B487600AF5BEC /* List.storyboard */,
+				27467229253B48B800AF5BEC /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		27467214253B483C00AF5BEC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2746721F253B487E00AF5BEC /* Search.storyboard */,
+				27467224253B48B000AF5BEC /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +297,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27467220253B487E00AF5BEC /* Search.storyboard in Resources */,
 				270D8747253B4114008352B2 /* LaunchScreen.storyboard in Resources */,
 				270D8744253B4114008352B2 /* Assets.xcassets in Resources */,
+				2746721B253B487600AF5BEC /* List.storyboard in Resources */,
 				270D8742253B4112008352B2 /* Main.storyboard in Resources */,
+				27467216253B487100AF5BEC /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +329,10 @@
 			files = (
 				270D873F253B4112008352B2 /* ViewController.swift in Sources */,
 				270D873B253B4112008352B2 /* AppDelegate.swift in Sources */,
+				27467225253B48B000AF5BEC /* SearchViewController.swift in Sources */,
+				2746722A253B48B800AF5BEC /* ListViewController.swift in Sources */,
 				270D873D253B4112008352B2 /* SceneDelegate.swift in Sources */,
+				2746723A253B48D000AF5BEC /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
