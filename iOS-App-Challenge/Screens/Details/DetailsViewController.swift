@@ -8,22 +8,65 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    // MARK: - References
+    var request = APIRequest()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var showTitle: UILabel!
+    @IBOutlet weak var showGenres: UILabel!
+    @IBOutlet weak var showRating: UILabel!
+    @IBOutlet weak var showPoster: UIImageView!
+    @IBOutlet weak var showOverview: UITextView!
+    @IBOutlet weak var genreLoadingIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Variables
+    var show: TVShow?
+    var genres: [Genre]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        fetchGenres()
+        updateInformation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Services Functions
+    /// Function that fetches the TV Show main genres
+    func fetchGenres() {
+        genreLoadingIndicator.startAnimating()
+        
+        guard let id = show?.id else { return }
+        request.fetchGenres(id: id, completionHandler: { response, error in
+            self.genres = response
+            self.updateGenreInformation()
+        })
     }
-    */
-
+    
+    // MARK: - User Interface Functions
+    /// Function that updates the UI information with the current selected show
+    func updateInformation() {
+        guard let show = show else { return }
+        
+        showTitle.text = show.title
+        showRating.text = "\(show.rating ?? 10.0)"
+        showOverview.text = show.overview
+        
+        showPoster.kf.setImage(with: show.imageURL, completionHandler: { result in
+            switch result {
+            case .failure:
+                self.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
+            case .success:
+                break
+            }
+        })
+    }
+    
+    func updateGenreInformation() {
+        guard let genres = genres else { return }
+        
+        DispatchQueue.main.async {
+            self.showGenres.text = "\(genres[0].name ?? "")"
+            self.genreLoadingIndicator.stopAnimating()
+        }
+    }
 }
