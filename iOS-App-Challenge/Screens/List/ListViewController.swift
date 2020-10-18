@@ -55,13 +55,11 @@ class ListViewController: UIViewController {
         }
     }
     
-    
     // MARK: - User Interface Functions
     /// Function to update the Daily Popular TV Shows CollectionView
     func updateDailyPopularShows() {
         DispatchQueue.main.async {
             self.mainTableView.reloadSections(IndexSet(arrayLiteral: 0), with: UITableView.RowAnimation.automatic)
-//            self.mainTableView.reloadData()
             self.loadingIndicator.stopAnimating()
         }
     }
@@ -109,20 +107,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: weekReuseIdentifier, for: indexPath) as! WeekTableViewCell
             
-            let show = popularShowsWeek?[indexPath.row]
-            cell.showTitle.text = show?.title
-            cell.showOverview.text = show?.overview
-            cell.showRating.text = "\(show?.rating ?? 10.0)"
+            guard let show = popularShowsWeek?[indexPath.row] else { return UITableViewCell() }
+            cell.setupTableViewCell(show: show)
             cell.selectionStyle = .none
-            
-            cell.showPoster.kf.setImage(with: show?.imageURL, completionHandler: { result in
-                switch result {
-                case .failure:
-                    cell.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
-                case .success:
-                    break
-                }
-            })
+
             return cell
         }
     }

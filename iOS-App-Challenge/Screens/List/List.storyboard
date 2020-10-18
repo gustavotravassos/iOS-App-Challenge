@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jMt-UO-uLd">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-aK-7iM">
-                                                    <rect key="frame" x="20" y="11" width="374" height="278"/>
+                                                    <rect key="frame" x="4" y="11" width="410" height="278"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="qZa-su-c7D"/>
@@ -121,10 +121,10 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zoG-aK-7iM" firstAttribute="trailing" secondItem="bEz-Vk-rOq" secondAttribute="trailingMargin" id="2XC-YA-wex"/>
+                                                <constraint firstItem="zoG-aK-7iM" firstAttribute="trailing" secondItem="bEz-Vk-rOq" secondAttribute="trailing" id="2XC-YA-wex"/>
                                                 <constraint firstItem="zoG-aK-7iM" firstAttribute="bottom" secondItem="bEz-Vk-rOq" secondAttribute="bottomMargin" id="Ny0-fD-Md8"/>
                                                 <constraint firstItem="zoG-aK-7iM" firstAttribute="top" secondItem="bEz-Vk-rOq" secondAttribute="topMargin" id="RRQ-gY-1GQ"/>
-                                                <constraint firstItem="zoG-aK-7iM" firstAttribute="leading" secondItem="bEz-Vk-rOq" secondAttribute="leadingMargin" id="uiX-Kq-5Zf"/>
+                                                <constraint firstItem="zoG-aK-7iM" firstAttribute="leading" secondItem="bEz-Vk-rOq" secondAttribute="leading" constant="4" id="uiX-Kq-5Zf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>

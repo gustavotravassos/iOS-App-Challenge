@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class WeekTableViewCell: UITableViewCell {
     // MARK: - Outlets
@@ -13,4 +14,33 @@ class WeekTableViewCell: UITableViewCell {
     @IBOutlet weak var showTitle: UILabel!
     @IBOutlet weak var showOverview: UILabel!
     @IBOutlet weak var showRating: UILabel!
+    
+    
+    // MARK: - Auxliar Functions
+    func setupTableViewCell(show: TVShow) {
+        showTitle.text = show.title
+        showOverview.text = show.overview
+        showRating.text = "\(show.rating ?? 10)"
+        
+        if let url = show.imageURL { loadImage(posterPath: url) }
+    }
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - tries: <#tries description#>
+    ///   - posterPath: <#posterPath description#>
+    func loadImage(_ tries: Int = 0, posterPath: URL) {
+        showPoster.kf.setImage(with: posterPath, completionHandler: { result in
+            switch result {
+            case .failure:
+                if tries == 3 {
+                    self.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
+                } else {
+                    self.loadImage(tries+1, posterPath: posterPath)
+                }
+            case .success:
+                break
+            }
+        })
+    }
 }

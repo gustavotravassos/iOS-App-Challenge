@@ -8,7 +8,6 @@
 import Foundation
 
 struct TVShow: Codable {
-    
     var title: String?
     var rating: Double?
     var overview: String?
@@ -27,5 +26,4 @@ struct TVShow: Codable {
         case posterPath = "poster_path"
         case rating = "vote_average"
     }
-    
 }

@@ -10,5 +10,4 @@ import UIKit
 class DayTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var popularDayCollectionView: UICollectionView!
-    @IBOutlet weak var seeAllButton: UIButton!
 }

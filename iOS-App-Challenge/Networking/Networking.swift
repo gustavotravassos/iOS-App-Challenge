@@ -8,6 +8,8 @@
 import Foundation
 
 class APIRequest {
+    
+    // MARK: - URL Parts
     private let APIKey = "?api_key=ca01e6658836c07edbe8b8ce2ac738c1"
     private let popularDayURL = "https://api.themoviedb.org/3/trending/tv/day"
     private let popularWeekURL = "https://api.themoviedb.org/3/trending/tv/week"
@@ -15,7 +17,7 @@ class APIRequest {
     private let languagePortuguese = "&language=pt-BR"
     private let languageEnglish = "&language=en-US"
     
-    
+    // MARK: - Fetch Functions
     /// Returns the daily most popular TV Shows arrays if succeded or the Error if failed
     func fetchMostPopularShowsDay(completionHandler: @escaping ([TVShow], Error?) -> Void) {
         var shows: [TVShow] = []
@@ -24,7 +26,6 @@ class APIRequest {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
-                
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(APIResponse.self, from: data)
                 shows = response.response ?? []
@@ -36,7 +37,6 @@ class APIRequest {
                 completionHandler([], error)
             }
         }.resume()
-        
     }
     
     /// Returns the weekly most popular TV Shows arrays if succeded or the Error if failed
@@ -47,14 +47,12 @@ class APIRequest {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
-                
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(APIResponse.self, from: data)
                 shows = response.response ?? []
                 completionHandler(shows, error)
             }
             catch let error {
-                
                 print("Error", error)
                 completionHandler([], error)
             }
@@ -70,14 +68,12 @@ class APIRequest {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
-                
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(APIResponse.self, from: data)
                 genres = response.genres ?? []
                 completionHandler(genres, error)
             }
             catch let error {
-                
                 print("Error", error)
                 completionHandler([], error)
             }

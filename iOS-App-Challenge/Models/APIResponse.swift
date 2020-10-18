@@ -8,7 +8,6 @@
 import Foundation
 
 struct APIResponse: Codable {
-    
     var response: [TVShow]?
     var genres: [Genre]?
     

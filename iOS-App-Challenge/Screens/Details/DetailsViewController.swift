@@ -46,7 +46,6 @@ class DetailsViewController: UIViewController {
     /// Function that updates the UI information with the current selected show
     func updateInformation() {
         guard let show = show else { return }
-        
         showTitle.text = show.title
         showRating.text = "\(show.rating ?? 10.0)"
         showOverview.text = show.overview
@@ -68,5 +67,9 @@ class DetailsViewController: UIViewController {
             self.showGenres.text = "\(genres[0].name ?? "")"
             self.genreLoadingIndicator.stopAnimating()
         }
+    }
+    
+    func loadImage(_ tries = 0, posterPath: URL) {
+        
     }
 }

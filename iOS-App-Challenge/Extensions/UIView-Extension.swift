@@ -7,12 +7,10 @@
 
 import UIKit
 
+/// Uma  extensão que permite que eu coloque cornerRadius em UIView pelo Storyboard
 @IBDesignable
-
 extension UIView {
-    
     @IBInspectable
-
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
