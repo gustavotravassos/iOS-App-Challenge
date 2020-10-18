@@ -140,18 +140,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dayCollectionViewReuseIdentifier, for: indexPath) as! DayCollectionViewCell
-        let show = popularShowsDay?[indexPath.row]
-        cell.showTitle.text = show?.title
-        cell.showRating.text = "\(show?.rating ?? 10.0)"
         
-        cell.showPoster.kf.setImage(with: show?.imageURL, completionHandler: { result in
-            switch result {
-            case .failure:
-                cell.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
-            case .success:
-                break
-            }
-        })
+        if let show = popularShowsDay?[indexPath.row] {
+            cell.setupCollectionViewCell(show: show)
+        }
+
+        
         return cell
     }
     

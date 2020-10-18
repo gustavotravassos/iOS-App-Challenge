@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Uma  extensão que permite que eu coloque cornerRadius em UIView pelo Storyboard
+/// Extension that allows for the use of cornerRadius property in a UIView directly from storyboard
 @IBDesignable
 extension UIView {
     @IBInspectable

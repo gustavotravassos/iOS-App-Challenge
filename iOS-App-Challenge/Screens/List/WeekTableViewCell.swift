@@ -25,11 +25,11 @@ class WeekTableViewCell: UITableViewCell {
         if let url = show.imageURL { loadImage(posterPath: url) }
     }
     
-    /// <#Description#>
+    /// Function to try to load an image
     /// - Parameters:
-    ///   - tries: <#tries description#>
-    ///   - posterPath: <#posterPath description#>
-    func loadImage(_ tries: Int = 0, posterPath: URL) {
+    ///   - tries: Amount of tries (max. 3)
+    ///   - posterPath: Image URL
+    private func loadImage(_ tries: Int = 0, posterPath: URL) {
         showPoster.kf.setImage(with: posterPath, completionHandler: { result in
             switch result {
             case .failure:

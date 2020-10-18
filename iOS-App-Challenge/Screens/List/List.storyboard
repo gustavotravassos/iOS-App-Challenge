@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayTableViewCell" rowHeight="300" id="Lbm-Yc-beF" customClass="DayTableViewCell" customModule="iOS_App_Challenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dayTableViewCell" rowHeight="300" id="Lbm-Yc-beF" customClass="DayTableViewCell" customModule="iOS_App_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lbm-Yc-beF" id="bEz-Vk-rOq">
@@ -50,7 +50,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="288"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-IO-Ymf">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="ErrorImage" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-IO-Ymf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="225"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="225" id="bJN-ba-TCK"/>
@@ -74,7 +74,7 @@
                                                                                 </constraints>
                                                                                 <imageReference key="image" image="star" catalog="system" symbolScale="small"/>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arw-ND-n1g">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arw-ND-n1g">
                                                                                 <rect key="frame" x="21" y="0.0" width="121" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="Label Text Color"/>
@@ -82,7 +82,7 @@
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A Maldição da Residência Hill" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="138" translatesAutoresizingMaskIntoConstraints="NO" id="wya-66-dUD">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="138" translatesAutoresizingMaskIntoConstraints="NO" id="wya-66-dUD">
                                                                         <rect key="frame" x="4" y="229" width="142" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="gep-n5-iMi"/>
@@ -136,7 +136,7 @@
                                             <outlet property="popularDayCollectionView" destination="zoG-aK-7iM" id="Tia-40-mwZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekTableViewCell" rowHeight="138" id="ZIC-a1-BNd" customClass="WeekTableViewCell" customModule="iOS_App_Challenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="weekTableViewCell" rowHeight="138" id="ZIC-a1-BNd" customClass="WeekTableViewCell" customModule="iOS_App_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZIC-a1-BNd" id="7c1-oY-nKr">
@@ -146,7 +146,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="AE1-lp-RXf">
                                                     <rect key="frame" x="12" y="12" width="390" height="114"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GcY-gb-Qpb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ErrorImage" translatesAutoresizingMaskIntoConstraints="NO" id="GcY-gb-Qpb">
                                                             <rect key="frame" x="0.0" y="0.0" width="79" height="114"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="79" id="4l3-5h-wJq"/>
@@ -161,8 +161,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-tB-kVN">
                                                             <rect key="frame" x="91" y="0.0" width="299" height="114"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A Maldição da Residência Hill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUT-iJ-Sxw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="222.5" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUT-iJ-Sxw">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="74.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="lhd-yd-NSz"/>
                                                                     </constraints>
@@ -178,15 +178,15 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y9o-AM-4K2">
-                                                                    <rect key="frame" x="0.0" y="94" width="37.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="94" width="27" height="20"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ce-ds-MMN">
                                                                             <rect key="frame" x="0.0" y="1" width="18" height="16.5"/>
                                                                             <color key="tintColor" name="Star Color"/>
                                                                             <imageReference key="image" image="star" catalog="system" symbolScale="small"/>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4H-FZ-zwR">
-                                                                            <rect key="frame" x="21" y="0.0" width="16.5" height="20"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4H-FZ-zwR">
+                                                                            <rect key="frame" x="21" y="0.0" width="6" height="20"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" name="Label Text Color"/>
                                                                             <nil key="highlightedColor"/>
@@ -273,6 +273,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ErrorImage" width="152" height="229"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="Label Header Color">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

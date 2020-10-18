@@ -50,16 +50,10 @@ class DetailsViewController: UIViewController {
         showRating.text = "\(show.rating ?? 10.0)"
         showOverview.text = show.overview
         
-        showPoster.kf.setImage(with: show.imageURL, completionHandler: { result in
-            switch result {
-            case .failure:
-                self.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
-            case .success:
-                break
-            }
-        })
+        if let url = show.imageURL { loadImage(posterPath: url) }
     }
     
+    /// Function that update genre UI information with the current selected show information
     func updateGenreInformation() {
         guard let genres = genres else { return }
         
@@ -69,7 +63,22 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    func loadImage(_ tries = 0, posterPath: URL) {
-        
+    /// Function to try to load an image
+    /// - Parameters:
+    ///   - tries: Amount of tries (max. 3)
+    ///   - posterPath: Image URL
+    private func loadImage(_ tries: Int = 0, posterPath: URL) {
+        showPoster.kf.setImage(with: posterPath, completionHandler: { result in
+            switch result {
+            case .failure:
+                if tries == 3 {
+                    self.showPoster.image = #imageLiteral(resourceName: "ErrorImage")
+                } else {
+                    self.loadImage(tries+1, posterPath: posterPath)
+                }
+            case .success:
+                break
+            }
+        })
     }
 }
