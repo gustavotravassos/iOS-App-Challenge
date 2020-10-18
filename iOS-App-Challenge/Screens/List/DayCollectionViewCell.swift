@@ -8,7 +8,8 @@
 import UIKit
 
 class DayCollectionViewCell: UICollectionViewCell {
-    
+    // MARK: - Outlets
     @IBOutlet weak var showPoster: UIImageView!
     @IBOutlet weak var showTitle: UILabel!
+    @IBOutlet weak var showRating: UILabel!
 }

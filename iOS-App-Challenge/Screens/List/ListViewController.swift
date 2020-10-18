@@ -17,12 +17,14 @@ class ListViewController: UIViewController {
     var popularShowsWeek: [TVShow]?
     
     // MARK: - Outlets
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var mainTableView: UITableView!
     
-    // MARK: - ColletionView & TableView ReuseIdentifiers
+    // MARK: - Identifiers
     let weekReuseIdentifier = "weekTableViewCell"
     let dayTableViewReuseIdentifier = "dayTableViewCell"
     let dayCollectionViewReuseIdentifier = "dayColletionViewCell"
+    let detailSegueIdentifier = "goToDetail"
     
     // MARK: - ViewController Functions
     override func viewDidLoad() {
@@ -68,6 +70,14 @@ class ListViewController: UIViewController {
             self.mainTableView.reloadData()
         }
     }
+    
+    // MARK: - Navigation Functions
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == detailSegueIdentifier {
+            guard let destination = segue.destination as? DetailsViewController else { return }
+            destination.show = sender as? TVShow
+        }
+    }
 }
 
 // MARK: - TableView DataSource & Delegate
@@ -100,6 +110,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             let show = popularShowsWeek?[indexPath.row]
             cell.showTitle.text = show?.title
             cell.showOverview.text = show?.overview
+            cell.showRating.text = "\(show?.rating ?? 10.0)"
             cell.selectionStyle = .none
             
             cell.showPoster.kf.setImage(with: show?.imageURL, completionHandler: { result in
@@ -115,7 +126,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Click")
+        guard let shows = popularShowsWeek else { return }
+        performSegue(withIdentifier: detailSegueIdentifier, sender: shows[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Week"
+        } else if section == 0{
+            return "Today"
+        } else {
+            return nil
+        }
     }
 }
 
@@ -130,6 +152,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dayCollectionViewReuseIdentifier, for: indexPath) as! DayCollectionViewCell
         let show = popularShowsDay?[indexPath.row]
         cell.showTitle.text = show?.title
+        cell.showRating.text = "\(show?.rating ?? 10.0)"
         
         cell.showPoster.kf.setImage(with: show?.imageURL, completionHandler: { result in
             switch result {
@@ -140,5 +163,10 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         })
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let shows = popularShowsDay else { return }
+        performSegue(withIdentifier: detailSegueIdentifier, sender: shows[indexPath.row])
     }
 }
