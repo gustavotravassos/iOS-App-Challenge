@@ -32,6 +32,7 @@ class ListViewController: UIViewController {
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        loadingIndicator.startAnimating()
         
         fetchWeekPopularShows()
         fetchDayPopularShows()
@@ -59,8 +60,9 @@ class ListViewController: UIViewController {
     /// Function to update the Daily Popular TV Shows CollectionView
     func updateDailyPopularShows() {
         DispatchQueue.main.async {
-            self.mainTableView.reloadSections(IndexSet(arrayLiteral: 0), with: UITableView.RowAnimation.top)
-            self.mainTableView.reloadData()
+            self.mainTableView.reloadSections(IndexSet(arrayLiteral: 0), with: UITableView.RowAnimation.automatic)
+//            self.mainTableView.reloadData()
+            self.loadingIndicator.stopAnimating()
         }
     }
     
