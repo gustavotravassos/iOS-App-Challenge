@@ -8,7 +8,7 @@
 
 
 
-## Information
+## Description and some information
 This is demostration app that i developed for a iOS Developer appliance in Brazil. Some of the features are:
 
 * Today's top 10 most popular TV Shows according to TheMovieDB
@@ -19,7 +19,7 @@ I used Model View Controller architecture (MVP). I used TheMovieDB API for the r
 
 ## Instalation
 
-1. Download
+1. Download the repo
 
 ```
 git clone https://github.com/gustavotravassos/iOS-App-Challenge
@@ -43,7 +43,7 @@ pod install
 
 _____
 
-## Information
+## Descrição e algumas informações
 Este é um aplicativo demonstração que eu desenvolvi como desafio para uma vaga de desenolvedor iOS no Brasil, algumas das funcionalidades são:
 
 * As 10 séries de TV mais populares de acordo com o TheMovieDB
@@ -54,7 +54,7 @@ Eu usei Model View Controller architecture (MVP). Usei a API do TheMovieDB para 
 
 ## Instalação
 
-1. Download
+1. Baixe o repositório
 
 ```
 git clone https://github.com/gustavotravassos/iOS-App-Challenge
@@ -70,7 +70,7 @@ pod install
 3. Agora é só abrir pelo XCode e abrir no seu iPhone de preferência.
 
 ## Algumas funcionalidades extras
-* SDesign intuitivo e simples
+* Design intuitivo e simples
 * Suporte para modo Claro e Escuro
 * Carregamento de fotos assíncrono
 * CollectionView dentro de TableViewCell
