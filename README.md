@@ -15,7 +15,7 @@ This is demostration app that i developed for a iOS Developer appliance in Brazi
 * This week top 20 most popular TV Shows according to TheMovieDB
 * All of this shows details including: Name, Rating, Genre, Overview
 
-I used Model View Controller architecture (MVP). I used TheMovieDB API for the requests.
+I used Model View Controller architecture (MVP). I used TheMovieDB API for the requests and KingFisher pod for easier image download and management.
 
 ## Instalation
 
@@ -38,6 +38,7 @@ pod install
 * Simple and intuitive design
 * Support for Light and Dark mode
 * Async image loading
+* AutoLayout
 * CollectionView inside a TableViewCell
 
 _____
@@ -49,7 +50,7 @@ Este é um aplicativo demonstração que eu desenvolvi como desafio para uma vag
 * As 20 séries de TV mais populares de acordo com o TheMovieDB
 * Todas essas séries de TV tem uma tela personalizada com: Nome, Nota, Genêro e uma descrição.
 
-I used Model View Controller architecture (MVP). I used TheMovieDB API for the requests.
+Eu usei Model View Controller architecture (MVP). Usei a API do TheMovieDB para as requisições e o pod KingFisher para manejar mais facilmente o download de imagens.
 
 ## Instalação
 
