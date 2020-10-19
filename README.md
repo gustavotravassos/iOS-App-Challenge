@@ -6,7 +6,8 @@
 
 ## Screenshots / Telas
 
-
+<img src="Screenshots/IMG_6358.PNG" alt="Screen 1 (Dark Mode)" width="220"> <img src="Screenshots/IMG_6361.PNG" alt="Screen 2 (Dark Mode)" width="220"> 
+<img src="Screenshots/IMG_6359.PNG" alt="Screen 1 (Light Mode)" width="220"> <img src="Screenshots/IMG_6360.PNG" alt="Screen 2 (Light Mode)" width="220">
 
 ## Description and some information
 This is demostration app that i developed for a iOS Developer appliance in Brazil. Some of the features are:
